@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brain Tumour Classification | Omotayo Emmanuel Ayomide</title>
+<meta name="description" content="Engineered a medical imaging model using VGG16 transfer learning to classify brain MRI scans into five categories with ~85–90% accuracy, deployed via Streamlit.">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<main id="main" class="case">
+<div class="wrap">
+<p><a class="back" href="../index.html#projects">← All projects</a></p>
+<h1>Brain Tumour Classification</h1>
+<p class="lead">Engineered a medical imaging model using VGG16 transfer learning to classify brain MRI scans into five categories with ~85–90% accuracy, deployed via Streamlit.</p>
+<div class="actions"><a class="btn btn-primary" href="https://github.com/Omotayo-Emmanuel/brain-tumour-classification" rel="noopener">View on GitHub</a><a class="btn btn-secondary" href="mailto:emmanuelomotayo720@gmail.com">Email me</a></div>
+<p class="muted">No hosted demo yet. Run it locally with <code>streamlit run app.py</code>.</p>
+<h2>Problem</h2>
+<p>Build a deep learning system that can automatically classify brain MRI scans into five categories (Glioma Tumor, Meningioma Tumor, Pituitary Tumor, No Tumor, and an “Unknown” class for external objects or noise) to support medical AI research and education.</p>
+<h2>Data</h2><p>Kaggle and a custom dataset: 12,010 images in total, organized into train, validation and test folders. Test sets were balanced to 224 images per class.</p>
+<h2>Approach</h2>
+<ul><li>Transfer learning with VGG16 (frozen base).</li><li>Custom head: Flatten → Dense (512, ReLU) → Dropout (0.5) → Dense (5, Softmax).</li><li>Image size 224×224, batch size 64, 15 epochs, Adam optimizer (lr = 0.0001).</li><li>Augmentation: rotation, shift, shear, zoom and flip. Dropout used to reduce overfitting.</li></ul>
+<h2>Stack</h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">Technology</th></tr></thead><tbody><tr><td>Python</td></tr><tr><td>TensorFlow</td></tr><tr><td>Keras</td></tr><tr><td>VGG16</td></tr><tr><td>Streamlit</td></tr></tbody></table></div>
+<h2>Results</h2>
+<p>Training accuracy ~95%, validation accuracy ~85–90%, test accuracy ~85%.</p>
+<h2>What I’d improve</h2>
+<p>Add confidence thresholding and explainability (e.g., Grad-CAM) to show which MRI regions drove the prediction, making the tool more trustworthy for educational demonstrations.</p>
+</div>
+</main>
+<footer>
+<div class="wrap">
+<ul>
+<li><a href="https://www.linkedin.com/in/emmauel-ayomide" rel="noopener">LinkedIn</a></li>
+<li><a href="https://github.com/Omotayo-Emmanuel" rel="noopener">GitHub</a></li>
+<li><a href="mailto:emmanuelomotayo720@gmail.com">emmanuelomotayo720@gmail.com</a></li>
+</ul>
+<p class="muted">© <span id="yr">2026</span> Omotayo Emmanuel Ayomide</p>
+</div>
+</footer>
+<script>document.getElementById("yr").textContent=new Date().getFullYear();</script>
+</body>
+</html>

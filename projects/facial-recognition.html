@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Custom Facial Recognition System | Omotayo Emmanuel Ayomide</title>
+<meta name="description" content="Developed a customizable facial recognition system using Xception transfer learning and a two-phase training strategy to identify specific individuals while gracefully handling unknown faces.">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<main id="main" class="case">
+<div class="wrap">
+<p><a class="back" href="../index.html#projects">← All projects</a></p>
+<h1>Custom Facial Recognition System</h1>
+<p class="lead">Developed a customizable facial recognition system using Xception transfer learning and a two-phase training strategy to identify specific individuals while gracefully handling unknown faces.</p>
+<div class="actions"><a class="btn btn-primary" href="https://github.com/Omotayo-Emmanuel/Facial_recognition" rel="noopener">View on GitHub</a><a class="btn btn-secondary" href="mailto:emmanuelomotayo720@gmail.com">Email me</a></div>
+
+<h2>Problem</h2>
+<p>Build a customizable facial recognition system that can be trained to recognize members of a specific group without relying on closed-source solutions, while handling outliers.</p>
+<h2>Data</h2><p>Pre-prepared dataset with images organized per person plus an “Unknown” class. 30–50 images per person are recommended.</p>
+<h2>Approach</h2>
+<ul><li>Transfer learning with Xception.</li><li>Custom head: GlobalAveragePooling2D → Dropout (0.5) → Dense (128, ReLU) → Dropout (0.3) → Output.</li><li>Two-phase training: frozen base first, then fine-tuning the top layers.</li><li>Automatic class weighting for imbalanced datasets.</li><li>Adjustable confidence threshold (default 0.7) for “Unknown” detection.</li></ul>
+<h2>Stack</h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">Technology</th></tr></thead><tbody><tr><td>Python</td></tr><tr><td>TensorFlow</td></tr><tr><td>Keras</td></tr><tr><td>Xception</td></tr><tr><td>OpenCV</td></tr><tr><td>Streamlit</td></tr></tbody></table></div>
+<h2>Results</h2>
+<p>A working Streamlit application supporting custom model training, real-time inference with confidence scores, training visualization and a face-capture utility.</p>
+<h2>What I’d improve</h2>
+<p>Add quantitative evaluation metrics (e.g., per-class precision, recall and F1-score) and a public demo deployment.</p>
+</div>
+</main>
+<footer>
+<div class="wrap">
+<ul>
+<li><a href="https://www.linkedin.com/in/emmauel-ayomide" rel="noopener">LinkedIn</a></li>
+<li><a href="https://github.com/Omotayo-Emmanuel" rel="noopener">GitHub</a></li>
+<li><a href="mailto:emmanuelomotayo720@gmail.com">emmanuelomotayo720@gmail.com</a></li>
+</ul>
+<p class="muted">© <span id="yr">2026</span> Omotayo Emmanuel Ayomide</p>
+</div>
+</footer>
+<script>document.getElementById("yr").textContent=new Date().getFullYear();</script>
+</body>
+</html>
