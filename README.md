@@ -1,38 +1,49 @@
 # Omotayo Emmanuel Ayomide: Portfolio
 
-Static portfolio (plain HTML/CSS, no build step, no backend) for GitHub Pages.
+Static portfolio built with plain HTML, CSS and JavaScript. It has no build step
+or backend and can be deployed directly to GitHub Pages.
 
 ## File structure
 
 ```
 .
 ├── index.html                  # Hero, featured projects, about, volunteer, footer
-├── styles.css                  # Shared styles
+├── style.css                   # Shared styles
+├── script.js                   # Mobile menu, active navigation and footer year
 ├── .nojekyll                   # Tells GitHub Pages to serve files as-is
 ├── README.md
 ├── assets/
-│   ├── headshot.jpg
-│   └── cv.pdf
+│   ├── headshot.jpeg
+│   ├── cv.pdf
+│   ├── project-adaptive-tutor.jpg
+│   ├── project-brain-tumour.jpg
+│   ├── project-vaw.jpg
+│   ├── project-facial-recognition.jpg
+│   └── project-business-finder.jpg
 └── projects/                   # One case study per project
     ├── adaptive-tutor.html
     ├── brain-tumour-classification.html
     ├── vaw-mental-health.html
     ├── facial-recognition.html
-    ├── business-finder.html
-    └── mellow-app.html
+    └── business-finder.html
 ```
 
-All paths are relative (`./assets/...`, `../styles.css`), so the site works at
-`username.github.io` and at `username.github.io/repo-name/`.
+The site uses relative paths such as `./assets/...`, `./style.css` and
+`../style.css`, so it works at both `username.github.io` and
+`username.github.io/repo-name/`. Technology icons on the home page are loaded
+from the Devicon CDN when an internet connection is available.
 
 ## Preview locally
 
 ```bash
 cd path/to/this/folder
-python3 -m http.server 8000
+py -m http.server 8000
 ```
 
-Open http://localhost:8000. (Opening `index.html` directly also works.)
+Open http://localhost:8000 in a browser. On systems where `py` is unavailable,
+use `python -m http.server 8000` instead. Opening `index.html` directly also
+works, although a local server is recommended for a closer preview of the
+deployed site.
 
 ## Deploy to GitHub Pages
 
@@ -57,5 +68,6 @@ Open http://localhost:8000. (Opening `index.html` directly also works.)
 ## Updating content
 
 - Text lives directly in `index.html` and `projects/*.html`.
+- Replace the files in `assets/` to update the headshot, CV or project images.
 - When a project gets a live demo, add a link next to the GitHub button in its case study page.
-- Replace `assets/cv.pdf` to update the CV download.
+- Edit `style.css` for shared styling and `script.js` for interactive behavior.
